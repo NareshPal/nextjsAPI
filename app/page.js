@@ -1,5 +1,6 @@
 "use client";
 
+import { set } from "mongoose";
 import { useState } from "react";
 
 export default function RegisterForm() {
@@ -41,6 +42,8 @@ export default function RegisterForm() {
       setUsername("");
       setPassword("");
       setFile(null);
+      setTimeout(() => setMessage(""), 2000);
+
     } else {
       setMessage(data.details || "Something went wrong");
     }
